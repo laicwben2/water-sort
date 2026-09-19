@@ -24,12 +24,6 @@ export default function App() {
     if (animationTimer.current !== null) window.clearTimeout(animationTimer.current)
   }, [])
 
-  useEffect(() => {
-    setSelected(null)
-    setInvalidTube(null)
-    setMessage(strings.selectSource)
-  }, [state.seed, state.completed])
-
   function showInvalid(index: number) {
     setInvalidTube(index)
     setMessage(strings.invalidMove)
