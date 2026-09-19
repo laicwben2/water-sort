@@ -80,11 +80,14 @@ function generateAttempt(difficulty: Difficulty, seed: string, capacity: number)
 
     // Bias toward states that add boundaries, while preserving deterministic variety.
     const sample = viable.slice(0, Math.min(8, viable.length))
-    const weighted = sample.sort((a, b) => {
-      const scoreA = puzzleComplexity(applyReverse(board, a)) + random() * 2
-      const scoreB = puzzleComplexity(applyReverse(board, b)) + random() * 2
-      return scoreB - scoreA
-    })
+    const weighted = sample
+      .map((candidate, index) => ({
+        candidate,
+        index,
+        score: puzzleComplexity(applyReverse(board, candidate)) + random() * 2,
+      }))
+      .sort((a, b) => b.score - a.score || a.index - b.index)
+      .map(({ candidate }) => candidate)
     const chosen = pick(weighted.slice(0, Math.min(3, weighted.length)), random)
     board = applyReverse(board, chosen)
     seen.add(boardKey(board))
