@@ -3,6 +3,9 @@ import { createRng, pick, shuffle } from './rng'
 import type { Board, Difficulty, Move, Puzzle } from './types'
 
 export const DIFFICULTY_CONFIG = {
+  // In v1 this controls spare capacity in the solved starting state. Reverse
+  // moves may distribute those slots, so a generated board is not guaranteed
+  // to visibly contain this many completely empty tubes.
   easy: { colors: 4, emptyTubes: 2, scramble: 18, minComplexity: 10 },
   medium: { colors: 6, emptyTubes: 2, scramble: 30, minComplexity: 18 },
   hard: { colors: 8, emptyTubes: 2, scramble: 46, minComplexity: 27 },

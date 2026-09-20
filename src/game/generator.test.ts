@@ -34,4 +34,27 @@ describe('puzzle generator', () => {
     const second = generatePuzzle('easy', levelSeed('easy', 2)).board
     expect(second).not.toEqual(first)
   })
+
+  it.each(difficulties)('preserves invariants across a batch of %s levels', (difficulty) => {
+    for (let level = 1; level <= 25; level += 1) {
+      const puzzle = generatePuzzle(difficulty, levelSeed(difficulty, level))
+      expect(isSolved(puzzle.board, puzzle.capacity)).toBe(false)
+      expect(puzzle.board.flat()).toHaveLength(
+        new Set(puzzle.board.flat()).size * puzzle.capacity,
+      )
+
+      let board = puzzle.board
+      for (const expectedMove of puzzle.solution) {
+        const legalMove = calculatePour(board, expectedMove.from, expectedMove.to, puzzle.capacity)
+        expect(legalMove).toEqual(expectedMove)
+        board = applyMove(board, legalMove!)
+      }
+      expect(isSolved(board, puzzle.capacity)).toBe(true)
+    }
+  })
+})
+
+describe.todo('Classic v2 occupancy contract', () => {
+  it('starts with exactly the configured number of empty tubes')
+  it('starts with every non-empty tube filled to capacity')
 })

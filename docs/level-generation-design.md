@@ -1,12 +1,14 @@
 # 關卡生成設計與改善規劃
 
-狀態：規劃中
+狀態：Phase 1 baseline 完成，Phase 2 待實作
 
 最後更新：2026-09-20
 
 ## 目的
 
 本文記錄 Water Sort 現行關卡生成器的可解性原理、初始液面不一致的原因、已知取捨，以及後續朝經典滿管排列與更可靠難度衡量演進的做法。
+
+現行 generator 的 3,000 關實測結果記錄於 [`generator-baseline.md`](generator-baseline.md)。
 
 ## 現行生成策略
 
@@ -159,9 +161,9 @@ water-sort:v2:<difficulty>:level:<level-number>
 
 ### Phase 1：明確化與測試
 
-- 將 `emptyTubes` 的現行含義補充到程式註解。
-- 新增 occupancy、顏色數量守恆與 solution replay 測試。
-- 統計大量 seed 的空管數、partial tube 數與 complexity 分布。
+- [x] 將 `emptyTubes` 的現行含義補充到程式註解。
+- [x] 新增 occupancy 規格、顏色數量守恆與 solution replay batch 測試。
+- [x] 統計 3,000 個 seed 的空管數、partial tube、complexity、重複率與效能分布。
 
 ### Phase 2：Classic generator prototype
 
