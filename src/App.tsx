@@ -62,6 +62,7 @@ export default function App() {
     }
     const move = game.pour(selected, index)
     if (!move) {
+      setSelected(null)
       showInvalid(index)
       return
     }
