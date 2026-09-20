@@ -63,9 +63,10 @@ Offline catalog development commands:
 ```bash
 npm run generate:catalog -- --per-difficulty=20
 npm run validate:catalog
+npm run generate:catalog:expanded -- --per-difficulty=20
 ```
 
-These commands run the expensive solver before deployment. They are not part of the production build or gameplay path.
+These commands run the expensive solver before deployment. The baseline profile uses 4/5/6 colors; the expanded profile uses 5/6/7 colors for Easy/Medium/Hard. They are not part of the production build or gameplay path.
 
 ## Production build
 

@@ -1,6 +1,6 @@
 # 關卡生成設計與改善規劃
 
-狀態：Phase 1、Phase 2 與 Phase 3A offline solver prototype 完成
+狀態：Phase 1、Phase 2、Phase 3A offline solver 與 Phase 3B expanded-profile benchmark 完成
 
 最後更新：2026-09-20
 
@@ -181,7 +181,10 @@ Prototype 沒有採用原先規劃的 beam search，而是重複執行加深後�
 - [x] 加入 bounded A* solver，明確區分 `solved`、`unsolvable` 與 `budget-exceeded`。
 - [x] 建立 balanced shuffle → 空管數測試 → solver → catalog 的離線 pipeline。
 - [x] 產生並驗證 Easy、Medium、Hard 各 20 題的 prototype catalog。
-- [ ] 擴充 difficulty model，不只依 solution depth，也納入 branching、explored states 與 dead-end 指標。
+- [x] 記錄最佳解路徑的 decision steps、forced steps、alternative moves 與 choices。
+- [x] 比較 baseline 4／5／6 色與 expanded 5／6／7 色 profile。
+- [ ] 加入 dead-end、錯誤路徑恢復成本與 buried-color 指標。
+- [ ] 以人工遊玩結果校準各指標權重，避免把高 branching 直接等同高難度。
 - [ ] 產生正式版每難度至少 1,000 題並執行人工抽查。
 
 Solver 不會進入瀏覽器 runtime，也不使用毫秒作 deterministic cutoff。離線工具使用固定 visited-state 與 depth budget；超出預算只能標記為 `budget-exceeded`，不能宣稱盤面無解。
