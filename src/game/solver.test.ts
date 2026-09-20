@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { applyMove, isSolved } from './rules'
-import { solveBoard } from './solver'
+import { analyzeSolutionPath, listLegalMoves, solveBoard } from './solver'
 import type { Board } from './types'
 
 describe('bounded water sort solver', () => {
@@ -35,5 +35,23 @@ describe('bounded water sort solver', () => {
       capacity: 2,
       maxVisitedStates: 0,
     }).status).toBe('budget-exceeded')
+  })
+
+  it('collapses moves that only differ by symmetric tube choices', () => {
+    expect(listLegalMoves([[0, 1], [0, 1], [], []], 2)).toHaveLength(1)
+  })
+
+  it('measures decisions along a solved path', () => {
+    const board: Board = [[0, 1], [0, 1], [], []]
+    const result = solveBoard(board, { capacity: 2 })
+    expect(result.status).toBe('solved')
+    if (result.status !== 'solved') return
+    expect(analyzeSolutionPath(board, result.solution, 2)).toEqual({
+      decisionSteps: 1,
+      forcedSteps: 2,
+      totalAlternativeMoves: 1,
+      averageChoices: 4 / 3,
+      maximumChoices: 2,
+    })
   })
 })

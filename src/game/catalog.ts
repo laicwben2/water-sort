@@ -1,5 +1,5 @@
 import type { Board, Difficulty, Move } from './types'
-import type { SolverMetrics } from './solver'
+import type { SolutionPathMetrics, SolverMetrics } from './solver'
 
 export interface EmptyTubeAnalysis {
   emptyTubes: number
@@ -18,11 +18,13 @@ export interface CatalogPuzzle {
   solution: Move[]
   canonicalKey: string
   solver: SolverMetrics & { minimumMoves: number }
+  solutionPath: SolutionPathMetrics
   emptyTubeAnalysis: EmptyTubeAnalysis[]
 }
 
 export interface PuzzleCatalog {
   version: string
   generator: 'balanced-shuffle+bounded-a-star'
+  profile: string
   puzzles: CatalogPuzzle[]
 }

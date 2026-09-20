@@ -16,6 +16,14 @@ export interface SolverMetrics {
   averageBranching: number
 }
 
+export interface SolutionPathMetrics {
+  decisionSteps: number
+  forcedSteps: number
+  totalAlternativeMoves: number
+  averageChoices: number
+  maximumChoices: number
+}
+
 export type SolverResult =
   | { status: 'solved'; solution: Move[]; metrics: SolverMetrics }
   | { status: 'unsolvable'; metrics: SolverMetrics }
@@ -94,6 +102,7 @@ function heuristic(board: Board): number {
 export function listLegalMoves(board: Board, capacity = 4): Move[] {
   const moves: Move[] = []
   const currentKey = canonicalStateKey(board)
+  const seenNextStates = new Set<string>()
 
   for (let from = 0; from < board.length; from += 1) {
     if (board[from].length === 0) continue
@@ -104,7 +113,9 @@ export function listLegalMoves(board: Board, capacity = 4): Move[] {
       const move = calculatePour(board, from, to, capacity)
       if (!move) continue
       seenTargets.add(targetSignature)
-      if (canonicalStateKey(applyMove(board, move)) === currentKey) continue
+      const nextKey = canonicalStateKey(applyMove(board, move))
+      if (nextKey === currentKey || seenNextStates.has(nextKey)) continue
+      seenNextStates.add(nextKey)
       moves.push(move)
     }
   }
@@ -117,6 +128,35 @@ export function listLegalMoves(board: Board, capacity = 4): Move[] {
       || first.from - second.from
       || first.to - second.to
   })
+}
+
+export function analyzeSolutionPath(
+  initialBoard: Board,
+  solution: readonly Move[],
+  capacity = 4,
+): SolutionPathMetrics {
+  let board = initialBoard.map((tube) => [...tube])
+  let decisionSteps = 0
+  let forcedSteps = 0
+  let totalChoices = 0
+  let maximumChoices = 0
+
+  for (const move of solution) {
+    const choices = listLegalMoves(board, capacity).length
+    totalChoices += choices
+    maximumChoices = Math.max(maximumChoices, choices)
+    if (choices <= 1) forcedSteps += 1
+    else decisionSteps += 1
+    board = applyMove(board, move)
+  }
+
+  return {
+    decisionSteps,
+    forcedSteps,
+    totalAlternativeMoves: Math.max(0, totalChoices - solution.length),
+    averageChoices: solution.length === 0 ? 0 : totalChoices / solution.length,
+    maximumChoices,
+  }
 }
 
 function metrics(
