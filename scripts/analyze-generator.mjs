@@ -11,6 +11,13 @@ function parseLevelCount() {
   return levels
 }
 
+function parseVersion() {
+  const argument = process.argv.find((value) => value.startsWith('--version='))
+  const version = argument?.split('=')[1] ?? 'v2'
+  if (version !== 'v1' && version !== 'v2') throw new Error('--version must be v1 or v2')
+  return version
+}
+
 function distribution(values) {
   const counts = new Map()
   for (const value of values) counts.set(value, (counts.get(value) ?? 0) + 1)
@@ -163,7 +170,7 @@ function assertPuzzle(puzzle, expectedColors, rules) {
   if (!rules.isSolved(board, puzzle.capacity)) throw new Error(`${puzzle.seed} solution does not finish`)
 }
 
-function analyzeDifficulty(difficulty, levels, generator, rules) {
+function analyzeDifficulty(difficulty, levels, version, generator, rules) {
   const config = generator.DIFFICULTY_CONFIG[difficulty]
   const boards = []
   const emptyCounts = []
@@ -178,7 +185,9 @@ function analyzeDifficulty(difficulty, levels, generator, rules) {
   let classicBoards = 0
 
   for (let level = 1; level <= levels; level += 1) {
-    const seed = generator.levelSeed(difficulty, level)
+    const seed = version === 'v1'
+      ? generator.levelSeedV1(difficulty, level)
+      : generator.levelSeed(difficulty, level)
     const startedAt = performance.now()
     const puzzle = generator.generatePuzzle(difficulty, seed)
     generationTimes.push(performance.now() - startedAt)
@@ -232,6 +241,7 @@ function analyzeDifficulty(difficulty, levels, generator, rules) {
 }
 
 const levels = parseLevelCount()
+const version = parseVersion()
 verifyIsomorphismCheck()
 const vite = await createServer({ logLevel: 'error', server: { middlewareMode: true } })
 
@@ -240,9 +250,9 @@ try {
   const rules = await vite.ssrLoadModule('/src/game/rules.ts')
   const results = Object.fromEntries(difficulties.map((difficulty) => [
     difficulty,
-    analyzeDifficulty(difficulty, levels, generator, rules),
+    analyzeDifficulty(difficulty, levels, version, generator, rules),
   ]))
-  console.log(JSON.stringify({ generatorVersion: 'v1', results }, null, 2))
+  console.log(JSON.stringify({ generatorVersion: version, results }, null, 2))
 } finally {
   await vite.close()
 }

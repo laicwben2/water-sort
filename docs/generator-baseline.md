@@ -11,7 +11,7 @@
 ## 重現方式
 
 ```bash
-npm run analyze:generator -- --levels=1000
+npm run analyze:generator -- --version=v1 --levels=1000
 ```
 
 分析工具位於 `scripts/analyze-generator.mjs`，對每個 `difficulty + level number` 執行以下檢查：

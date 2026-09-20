@@ -69,14 +69,14 @@ export function puzzleComplexity(board: Board): number {
   return transitions * 2 + mixedTubes * 2 + partialTubes
 }
 
-function generateAttempt(difficulty: Difficulty, seed: string, capacity: number): Puzzle | null {
+function generateAttempt(difficulty: Difficulty, seed: string, capacity: number, scrambleDepth?: number): Puzzle | null {
   const config = DIFFICULTY_CONFIG[difficulty]
   const random = createRng(seed)
   let board = solvedBoard(config.colors, config.emptyTubes, capacity)
   const forwardSolution: Move[] = []
   const seen = new Set([boardKey(board)])
 
-  for (let step = 0; step < config.scramble; step += 1) {
+  for (let step = 0; step < (scrambleDepth ?? config.scramble); step += 1) {
     const candidates = shuffle(reverseCandidates(board, capacity), random)
     const viable = candidates.filter((candidate) => !seen.has(boardKey(applyReverse(board, candidate))))
     if (viable.length === 0) break
@@ -102,23 +102,96 @@ function generateAttempt(difficulty: Difficulty, seed: string, capacity: number)
   return { board, capacity, difficulty, seed, solution: forwardSolution, complexity }
 }
 
-export function levelSeed(difficulty: Difficulty, level: number): string {
+export function isClassicBoard(board: Board, emptyTubes: number, capacity = 4): boolean {
+  return board.filter((tube) => tube.length === 0).length === emptyTubes
+    && board.every((tube) => tube.length === 0 || tube.length === capacity)
+}
+
+export function levelSeedV1(difficulty: Difficulty, level: number): string {
   return `water-sort:v1:${difficulty}:level:${Math.max(1, Math.floor(level))}`
+}
+
+export function levelSeed(difficulty: Difficulty, level: number): string {
+  return `water-sort:v2:${difficulty}:level:${Math.max(1, Math.floor(level))}`
 }
 
 export function randomSeed(): string {
   if (globalThis.crypto?.getRandomValues) {
     const values = new Uint32Array(3)
     globalThis.crypto.getRandomValues(values)
-    return `water-sort:v1:random:${Array.from(values).join('-')}`
+    return `water-sort:v2:random:${Array.from(values).join('-')}`
   }
-  return `water-sort:v1:random:${Date.now()}-${Math.random()}`
+  return `water-sort:v2:random:${Date.now()}-${Math.random()}`
 }
 
-export function generatePuzzle(difficulty: Difficulty, seed: string, capacity = 4): Puzzle {
+function generateLegacyPuzzle(difficulty: Difficulty, seed: string, capacity: number): Puzzle {
   for (let attempt = 0; attempt < 80; attempt += 1) {
     const puzzle = generateAttempt(difficulty, `${seed}:attempt:${attempt}`, capacity)
     if (puzzle) return { ...puzzle, seed }
   }
   throw new Error(`Unable to generate ${difficulty} puzzle`)
+}
+
+function applyPresentationPermutation(puzzle: Puzzle, seed: string): Puzzle {
+  const random = createRng(`${seed}:presentation`)
+  const colors = shuffle(
+    Array.from({ length: DIFFICULTY_CONFIG[puzzle.difficulty].colors }, (_, color) => color),
+    random,
+  )
+  const tubeOrder = shuffle(puzzle.board.map((_, index) => index), random)
+  const newTubeIndex = new Map(tubeOrder.map((oldIndex, newIndex) => [oldIndex, newIndex]))
+
+  return {
+    ...puzzle,
+    board: tubeOrder.map((oldIndex) => puzzle.board[oldIndex].map((color) => colors[color])),
+    solution: puzzle.solution.map((move) => ({
+      ...move,
+      from: newTubeIndex.get(move.from)!,
+      to: newTubeIndex.get(move.to)!,
+      color: colors[move.color],
+    })),
+  }
+}
+
+function generateClassicPuzzle(difficulty: Difficulty, seed: string, capacity: number): Puzzle {
+  const config = DIFFICULTY_CONFIG[difficulty]
+  const targetCandidates = difficulty === 'easy' ? 4 : difficulty === 'medium' ? 2 : 1
+  const candidates: Puzzle[] = []
+  const candidateKeys = new Set<string>()
+
+  for (let attempt = 0; attempt < 960; attempt += 1) {
+    const deepSearch = attempt < 640
+    const puzzle = generateAttempt(
+      difficulty,
+      `${seed}:classic:${deepSearch ? 'deep' : 'fallback'}:${attempt}`,
+      capacity,
+      deepSearch ? config.scramble * 2 : config.scramble,
+    )
+    if (puzzle && isClassicBoard(puzzle.board, config.emptyTubes, capacity)) {
+      const key = boardKey(puzzle.board)
+      if (!candidateKeys.has(key)) {
+        candidates.push(puzzle)
+        candidateKeys.add(key)
+      }
+      if (candidates.length === targetCandidates) {
+        return applyPresentationPermutation(
+          { ...pick(candidates, createRng(`${seed}:classic:pick`)), seed },
+          seed,
+        )
+      }
+    }
+  }
+  if (candidates.length > 0) {
+    return applyPresentationPermutation(
+      { ...pick(candidates, createRng(`${seed}:classic:pick`)), seed },
+      seed,
+    )
+  }
+  throw new Error(`Unable to generate classic ${difficulty} puzzle for ${seed}`)
+}
+
+export function generatePuzzle(difficulty: Difficulty, seed: string, capacity = 4): Puzzle {
+  return seed.startsWith('water-sort:v1:')
+    ? generateLegacyPuzzle(difficulty, seed, capacity)
+    : generateClassicPuzzle(difficulty, seed, capacity)
 }
