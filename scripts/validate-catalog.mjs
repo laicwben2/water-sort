@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { createServer } from 'vite'
 
 const argument = process.argv.find((value) => value.startsWith('--file='))
-const catalogPath = resolve(argument?.split('=')[1] ?? 'data/levels/v3-prototype.json')
+const catalogPath = resolve(argument?.split('=')[1] ?? 'data/levels/v3-baseline-prototype.json')
 const catalog = JSON.parse(await readFile(catalogPath, 'utf8'))
 const vite = await createServer({ logLevel: 'error', server: { middlewareMode: true } })
 
@@ -53,6 +53,7 @@ function summarizeEmptyTubeTrials(puzzles) {
 try {
   const { canonicalPuzzleKey } = await vite.ssrLoadModule('/src/game/canonical.ts')
   const rules = await vite.ssrLoadModule('/src/game/rules.ts')
+  const { analyzeSolutionPath } = await vite.ssrLoadModule('/src/game/solver.ts')
   const ids = new Set()
   const canonicalKeys = new Set()
 
@@ -90,6 +91,10 @@ try {
     if (puzzle.solution.length !== puzzle.solver.minimumMoves) {
       throw new Error(`Solution length mismatch: ${puzzle.id}`)
     }
+    if (JSON.stringify(analyzeSolutionPath(puzzle.board, puzzle.solution, puzzle.capacity))
+      !== JSON.stringify(puzzle.solutionPath)) {
+      throw new Error(`Solution path metrics mismatch: ${puzzle.id}`)
+    }
   }
 
   const byDifficulty = Object.fromEntries(['easy', 'medium', 'hard'].map((difficulty) => {
@@ -102,10 +107,25 @@ try {
       meanExploredStates: puzzles.length === 0 ? 0 : Math.round(
         puzzles.reduce((sum, puzzle) => sum + puzzle.solver.exploredStates, 0) / puzzles.length,
       ),
+      meanDecisionRatio: puzzles.length === 0 ? 0 : Number((
+        puzzles.reduce((sum, puzzle) => (
+          sum + puzzle.solutionPath.decisionSteps / puzzle.solution.length
+        ), 0) / puzzles.length
+      ).toFixed(3)),
+      meanChoices: puzzles.length === 0 ? 0 : Number((
+        puzzles.reduce((sum, puzzle) => sum + puzzle.solutionPath.averageChoices, 0)
+          / puzzles.length
+      ).toFixed(3)),
     }]
   }))
 
-  console.log(JSON.stringify({ valid: true, version: catalog.version, puzzles: catalog.puzzles.length, byDifficulty }, null, 2))
+  console.log(JSON.stringify({
+    valid: true,
+    version: catalog.version,
+    profile: catalog.profile,
+    puzzles: catalog.puzzles.length,
+    byDifficulty,
+  }, null, 2))
 } finally {
   await vite.close()
 }

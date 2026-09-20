@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "analyze:generator": "node scripts/analyze-generator.mjs",
     "generate:catalog": "node scripts/generate-catalog.mjs",
+    "generate:catalog:expanded": "node scripts/generate-catalog.mjs --profile=expanded",
     "validate:catalog": "node scripts/validate-catalog.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
