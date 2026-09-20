@@ -26,7 +26,7 @@ A polished, mobile-first Water Sort Puzzle built with React, TypeScript, and Vit
 
 The generator does not shuffle liquid layers arbitrarily. It starts from a solved board and applies deterministic reverse transformations. Each transformation is accepted only when its inverse is a legal forward Water Sort move. Replaying those inverses in reverse order therefore provides a proof of solvability.
 
-Generation also rejects solved, short, low-transition, and insufficiently mixed boards. Difficulty changes color count, transformation depth, and minimum complexity—not only the number of colors. A seeded PRNG makes every `difficulty + level number` combination reproducible.
+Generation also rejects solved, short, low-transition, and insufficiently mixed boards. The v2 Classic generator accepts only boards with the configured number of empty tubes and every other tube filled to capacity. Difficulty changes color count, transformation depth, and minimum complexity—not only the number of colors. A seeded PRNG makes every `difficulty + level number` combination reproducible, while saved v1 games retain their original board and seed.
 
 The current behavior, uneven starting fill levels, product tradeoffs, and the proposed Classic generator roadmap are documented in [`docs/level-generation-design.md`](docs/level-generation-design.md). The measured 3,000-level v1 baseline is available in [`docs/generator-baseline.md`](docs/generator-baseline.md).
 

@@ -1,6 +1,6 @@
 # 關卡生成設計與改善規劃
 
-狀態：Phase 1 baseline 完成，Phase 2 待實作
+狀態：Phase 1 baseline 與 Phase 2 Classic prototype 完成
 
 最後更新：2026-09-20
 
@@ -8,9 +8,9 @@
 
 本文記錄 Water Sort 現行關卡生成器的可解性原理、初始液面不一致的原因、已知取捨，以及後續朝經典滿管排列與更可靠難度衡量演進的做法。
 
-現行 generator 的 3,000 關實測結果記錄於 [`generator-baseline.md`](generator-baseline.md)。
+v1 generator 的 3,000 關實測結果記錄於 [`generator-baseline.md`](generator-baseline.md)，v2 Classic prototype 的結果記錄於 [`generator-v2-prototype.md`](generator-v2-prototype.md)。
 
-## 現行生成策略
+## v1 生成策略
 
 生成器從 solved board 開始：每種顏色各自裝滿一根試管，另外加入難度設定指定的空試管。接著使用 seeded PRNG 選擇一系列 reverse moves，逐步把 solved board 轉換成題目。
 
@@ -31,7 +31,7 @@ water-sort:v1:<difficulty>:level:<level-number>
 
 相同 generator version、difficulty 與 level number 會得到相同題目。Random Game 則使用新的隨機 seed。
 
-## 現行 complexity heuristic
+## v1 complexity heuristic
 
 目前 complexity 由三個因素組成：
 
@@ -48,7 +48,7 @@ water-sort:v1:<difficulty>:level:<level-number>
 
 這個 heuristic 適合快速排除明顯 trivial 的題目，但不等同於最短解長度，也不能完整代表玩家實際感受到的難度。
 
-## 為何初始液面高度不一致
+## 為何 v1 初始液面高度不一致
 
 reverse move 允許只移動來源頂部同色液體的一部分。多次拆分後，總液體量與總空位保持不變，但空位可能分散在多根試管中。
 
@@ -167,10 +167,12 @@ water-sort:v2:<difficulty>:level:<level-number>
 
 ### Phase 2：Classic generator prototype
 
-- 實作 deterministic constrained beam search。
-- 終點強制為滿管或空管。
-- 保留 forward solution 與最低 complexity 檢查。
-- 對 Easy、Medium、Hard 各批次產生至少數百個 seed，測量成功率與執行時間。
+- [x] 以 deterministic constrained retry search 建立 prototype。
+- [x] 終點強制為滿管或空管。
+- [x] 保留 forward solution 與最低 complexity 檢查。
+- [x] 對 Easy、Medium、Hard 各測量 1,000 個 seed 的正確性、重複率與執行時間。
+
+Prototype 沒有採用原先規劃的 beam search，而是重複執行加深後的 deterministic reverse walk，收集符合 Classic occupancy 的候選盤面再以 seed 選取。這個版本改動較小且已能穩定滿足外觀契約；是否值得改為 beam search，將由 Phase 3 的 solver 與效能資料決定。
 
 ### Phase 3：Solver-based difficulty
 
@@ -181,9 +183,9 @@ water-sort:v2:<difficulty>:level:<level-number>
 
 ### Phase 4：產品整合
 
-- Level Mode 切換至 `v2` Classic generator。
+- [x] Level Mode 與 Random Game 切換至 `v2` Classic generator。
 - 視需要讓 Random Game 提供 Classic／Dynamic 選擇。
-- 為舊 localStorage 資料加入 migration。
+- [x] 保留舊 localStorage 的完整 board、history 與 `v1` seed；重新載入、Restart 與 Replay 不重新產生盤面。
 - 執行 Desktop Chrome 與 iPhone Safari 的完整 regression test。
 
 ## 驗收條件
