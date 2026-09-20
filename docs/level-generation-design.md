@@ -1,6 +1,6 @@
 # 關卡生成設計與改善規劃
 
-狀態：Phase 1 baseline 與 Phase 2 Classic prototype 完成
+狀態：Phase 1、Phase 2 與 Phase 3A offline solver prototype 完成
 
 最後更新：2026-09-20
 
@@ -8,7 +8,7 @@
 
 本文記錄 Water Sort 現行關卡生成器的可解性原理、初始液面不一致的原因、已知取捨，以及後續朝經典滿管排列與更可靠難度衡量演進的做法。
 
-v1 generator 的 3,000 關實測結果記錄於 [`generator-baseline.md`](generator-baseline.md)，v2 Classic prototype 的結果記錄於 [`generator-v2-prototype.md`](generator-v2-prototype.md)。
+v1 generator 的 3,000 關實測結果記錄於 [`generator-baseline.md`](generator-baseline.md)，v2 Classic prototype 的結果記錄於 [`generator-v2-prototype.md`](generator-v2-prototype.md)，v3 offline catalog prototype 記錄於 [`offline-catalog-v3.md`](offline-catalog-v3.md)。
 
 ## v1 生成策略
 
@@ -176,16 +176,23 @@ Prototype 沒有採用原先規劃的 beam search，而是重複執行加深後�
 
 ### Phase 3：Solver-based difficulty
 
-- 加入 canonical board representation，消除試管排列與顏色命名造成的對稱狀態。
-- 加入 bounded solver。
-- 依 solution depth、branching factor 與 explored states 校準難度。
-- 對無法在時間限制內評估的候選盤面安全重試。
+- [x] 加入 solver state canonical key，消除試管排列造成的搜尋對稱狀態。
+- [x] 加入跨題 canonical key，消除試管排列與顏色命名造成的 catalog duplicate。
+- [x] 加入 bounded A* solver，明確區分 `solved`、`unsolvable` 與 `budget-exceeded`。
+- [x] 建立 balanced shuffle → 空管數測試 → solver → catalog 的離線 pipeline。
+- [x] 產生並驗證 Easy、Medium、Hard 各 20 題的 prototype catalog。
+- [ ] 擴充 difficulty model，不只依 solution depth，也納入 branching、explored states 與 dead-end 指標。
+- [ ] 產生正式版每難度至少 1,000 題並執行人工抽查。
+
+Solver 不會進入瀏覽器 runtime，也不使用毫秒作 deterministic cutoff。離線工具使用固定 visited-state 與 depth budget；超出預算只能標記為 `budget-exceeded`，不能宣稱盤面無解。
 
 ### Phase 4：產品整合
 
 - [x] Level Mode 與 Random Game 切換至 `v2` Classic generator。
 - 視需要讓 Random Game 提供 Classic／Dynamic 選擇。
 - [x] 保留舊 localStorage 的完整 board、history 與 `v1` seed；重新載入、Restart 與 Replay 不重新產生盤面。
+- [ ] Level Mode 改讀版本化的 v3 static catalog，不在使用者裝置生成題目。
+- [ ] Random Game 從已驗證的獨立 pool 選題，並用 localStorage 避開近期重複。
 - 執行 Desktop Chrome 與 iPhone Safari 的完整 regression test。
 
 ## 驗收條件
@@ -207,5 +214,7 @@ Classic Level Mode 完成時應滿足：
 
 - Level Mode 是否完全禁止 Dynamic 盤面。
 - Random Game 是否在第一版就顯示 Classic／Dynamic 選擇器。
-- Hard 關卡採用即時 solver 還是預先產生 catalog。
-- 最短解是精確計算，或使用有時間上限的近似值。
+- 正式 catalog 各難度應採用多少顏色、空管與關卡數。
+- Hard 的難度分級應使用精確最短解，或固定節點預算內的近似指標。
+
+已決定：所有正式 Level 與 Random pool 都在開發階段離線求解；使用者只下載已驗證的 static catalog，不等待 solver。
