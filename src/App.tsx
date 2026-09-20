@@ -31,7 +31,21 @@ export default function App() {
   }
 
   function handleTubeClick(index: number) {
-    if (animation || state.completed) return
+    if (state.completed) return
+    if (animation) {
+      if (state.board[index].length === 0) {
+        setMessage(strings.waitForPour)
+        return
+      }
+      if (selected === index) {
+        setSelected(null)
+        setMessage(strings.selectSource)
+        return
+      }
+      setSelected(index)
+      setMessage(strings.selectTarget)
+      return
+    }
     if (selected === null) {
       if (state.board[index].length === 0) {
         showInvalid(index)
@@ -91,7 +105,7 @@ export default function App() {
               selected={selected}
               invalidTube={invalidTube}
               animation={animation}
-              locked={Boolean(animation)}
+              locked={state.completed}
               onTubeClick={handleTubeClick}
             />
           </div>

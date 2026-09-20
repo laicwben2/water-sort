@@ -18,6 +18,7 @@ export const strings = {
   levelComplete: 'Level Complete',
   selectSource: 'Select a tube to pour from',
   selectTarget: 'Now choose a destination',
+  waitForPour: 'Wait for the current pour to finish',
   invalidMove: 'That pour is not allowed',
   theme: 'Theme',
   themeSystem: 'System theme',
