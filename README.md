@@ -28,6 +28,8 @@ The generator does not shuffle liquid layers arbitrarily. It starts from a solve
 
 Generation also rejects solved, short, low-transition, and insufficiently mixed boards. Difficulty changes color count, transformation depth, and minimum complexity—not only the number of colors. A seeded PRNG makes every `difficulty + level number` combination reproducible.
 
+The current behavior, uneven starting fill levels, product tradeoffs, and the proposed Classic generator roadmap are documented in [`docs/level-generation-design.md`](docs/level-generation-design.md).
+
 ## Tech stack
 
 - React
