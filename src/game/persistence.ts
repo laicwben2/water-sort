@@ -50,8 +50,16 @@ export function saveProgress(difficulty: Difficulty, level: number): void {
   localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress))
 }
 
-export function recordKey(difficulty: Difficulty, mode: GameMode, level: number, seed: string): string {
-  return mode === 'level' ? `${difficulty}:level:${level}` : `${difficulty}:random:${seed}`
+export function recordKey(difficulty: Difficulty, mode: GameMode, level: number, contentId: string): string {
+  if (mode === 'random') return `${difficulty}:random:${contentId}`
+
+  // v1/v2 saved games used the numeric level as the record identity. Preserve
+  // that key only for historical generated seeds; static catalog levels use
+  // their stable level id so records survive catalog reordering.
+  const isLegacyGeneratedLevel = /^water-sort:v[12]:/.test(contentId)
+  return isLegacyGeneratedLevel
+    ? `${difficulty}:level:${level}`
+    : `${difficulty}:level-id:${contentId}`
 }
 
 export function loadRecord(key: string): GameRecord {
