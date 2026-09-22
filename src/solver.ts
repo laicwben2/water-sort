@@ -142,9 +142,9 @@ function reconstructSolution(nodes: SearchNode[], solvedNodeId: number): Move[] 
   const solution: Move[] = []
   let nodeId: number | undefined = solvedNodeId
   while (nodeId !== undefined) {
-    const node = nodes[nodeId]
-    if (node.move) solution.push(node.move)
-    nodeId = node.parentId
+    const currentNode: SearchNode = nodes[nodeId]
+    if (currentNode.move) solution.push(currentNode.move)
+    nodeId = currentNode.parentId
   }
   return solution.reverse()
 }
