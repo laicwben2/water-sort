@@ -84,7 +84,7 @@ Must not own long-term:
 
 ### water-sort-level-generator
 
-Will own:
+Owns:
 
 - solver and solver tests
 - canonical state/puzzle keys
@@ -97,10 +97,18 @@ Will own:
 
 It will keep its own rules implementation for offline solving. Cross-project compatibility is controlled by `rulesVersion` and contract tests, not by importing browser-game code.
 
-## Current migration state
+## Current state
 
-The refactor branch switches new gameplay to a compact static pack generated from the already solver-verified v3 baseline and expanded prototype catalogs. It contains 40 levels per difficulty.
+The repository split is complete.
 
-The old generator/solver files remain temporarily in the repository only because the connected GitHub integration cannot create the new repository. They are no longer part of the intended game runtime path and should be moved to `water-sort-level-generator` before this branch is merged as the final repository split.
+- Game client: https://github.com/laicwben2/water-sort
+- Offline generator: https://github.com/laicwben2/water-sort-level-generator
+- Shared contract: Level Pack v1 / `classic-v1`
+
+The Web refactor branch loads a compact static migration pack derived from the already solver-verified v3 baseline and expanded prototype catalogs. It currently contains 40 levels per difficulty.
+
+Generator, solver, canonicalization, RNG, audit scripts, prototype catalogs, and generator-specific historical documents have been removed from the Web repository and preserved in the generator repository.
 
 Existing saved games remain self-contained because persistence stores `board` and `initialBoard`. Restart and replay therefore do not require regeneration of historical v1/v2 seeds.
+
+A larger production catalog is content work, not architecture work. It must be generated and validated in `water-sort-level-generator`, then exported as a Level Pack for consumers.
