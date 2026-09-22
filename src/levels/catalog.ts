@@ -3,7 +3,6 @@ import type { Board, Difficulty } from '../game/types'
 
 export interface RuntimeLevelMetadata {
   optimalMoves?: number
-  sourceCatalog?: string
 }
 
 export interface RuntimeLevel {
@@ -18,7 +17,7 @@ export interface LevelPack {
   formatVersion: 1
   rulesVersion: 'classic-v1'
   packId: string
-  generatedBy: string
+  generatedBy: 'water-sort-level-generator'
   levels: RuntimeLevel[]
 }
 
@@ -60,16 +59,12 @@ function parseLevel(value: unknown, index: number): RuntimeLevel {
   let parsedMetadata: RuntimeLevelMetadata | undefined
   if (metadata !== undefined) {
     if (!isRecord(metadata)) throw new Error(`Level ${id} has invalid metadata`)
-    const { optimalMoves, sourceCatalog } = metadata
+    const { optimalMoves } = metadata
     if (optimalMoves !== undefined && (!Number.isInteger(optimalMoves) || (optimalMoves as number) < 0)) {
       throw new Error(`Level ${id} has invalid optimalMoves`)
     }
-    if (sourceCatalog !== undefined && typeof sourceCatalog !== 'string') {
-      throw new Error(`Level ${id} has invalid sourceCatalog`)
-    }
     parsedMetadata = {
       ...(optimalMoves === undefined ? {} : { optimalMoves: optimalMoves as number }),
-      ...(sourceCatalog === undefined ? {} : { sourceCatalog }),
     }
   }
 
@@ -87,9 +82,7 @@ export function parseLevelPack(value: unknown): LevelPack {
   if (value.formatVersion !== 1) throw new Error('Unsupported level pack formatVersion')
   if (value.rulesVersion !== 'classic-v1') throw new Error('Unsupported rulesVersion')
   if (typeof value.packId !== 'string' || value.packId.length === 0) throw new Error('Level pack has an invalid packId')
-  if (typeof value.generatedBy !== 'string' || value.generatedBy.length === 0) {
-    throw new Error('Level pack has an invalid generatedBy value')
-  }
+  if (value.generatedBy !== 'water-sort-level-generator') throw new Error('Unsupported generatedBy value')
   if (!Array.isArray(value.levels) || value.levels.length === 0) throw new Error('Level pack contains no levels')
 
   const levels = value.levels.map(parseLevel)
@@ -103,7 +96,7 @@ export function parseLevelPack(value: unknown): LevelPack {
     formatVersion: 1,
     rulesVersion: 'classic-v1',
     packId: value.packId,
-    generatedBy: value.generatedBy,
+    generatedBy: 'water-sort-level-generator',
     levels,
   }
 }
