@@ -88,7 +88,7 @@ export default function App() {
         <section className="game-card" aria-labelledby="game-title">
           <div className="game-heading">
             <div>
-              <p className="eyebrow">{state.mode === 'level' ? 'Seeded journey' : 'Fresh arrangement'}</p>
+              <p className="eyebrow">{state.mode === 'level' ? 'Verified level' : 'Verified random level'}</p>
               <h1 id="game-title">{title}</h1>
             </div>
             <div className="score-strip" aria-label="Current game statistics">
@@ -102,7 +102,7 @@ export default function App() {
             <div className="ambient-orb ambient-two" />
             <GameBoard
               board={state.board}
-              capacity={4}
+              capacity={state.capacity}
               selected={selected}
               invalidTube={invalidTube}
               animation={animation}
@@ -139,7 +139,7 @@ export default function App() {
         </aside>
       </main>
 
-      <footer>Every level is seeded, replayable, and generated with a guaranteed solution.</footer>
+      <footer>Every new game is loaded from a solver-verified static level pack.</footer>
 
       <CompleteDialog
         open={state.completed}

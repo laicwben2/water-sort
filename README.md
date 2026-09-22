@@ -1,11 +1,11 @@
 # Water Sort
 
-A polished, mobile-first Water Sort Puzzle built with React, TypeScript, and Vite. The production v2 levels are deterministic and generated from solved boards using reversible transformations, so every puzzle ships with a known legal solution path. A v3 offline catalog pipeline is under evaluation to replace runtime generation with pre-solved balanced shuffles.
+A polished, mobile-first Water Sort Puzzle built with React, TypeScript, and Vite. Official levels are produced offline by the separate `water-sort-level-generator` project and consumed here through a versioned, solver-verified static Level Pack.
 
 ## Features
 
-- Seeded Level Mode with reproducible Easy, Medium, and Hard puzzles
-- Random Game mode for a fresh seeded puzzle on demand
+- Static Level Mode with solver-verified Easy, Medium, and Hard puzzles
+- Random Game mode that selects from the same verified level pool
 - Rule-correct multi-layer pours with clear invalid-move feedback
 - Undo, restart, next-level, and replay flows
 - Move counter, timer, per-level best moves, and best time
@@ -22,15 +22,27 @@ A polished, mobile-first Water Sort Puzzle built with React, TypeScript, and Vit
 3. The largest possible contiguous block of the source's top color is poured.
 4. Complete the level by making every non-empty tube both full and single-colored.
 
-## Solvable puzzle generation
+## Level architecture
 
-The generator does not shuffle liquid layers arbitrarily. It starts from a solved board and applies deterministic reverse transformations. Each transformation is accepted only when its inverse is a legal forward Water Sort move. Replaying those inverses in reverse order therefore provides a proof of solvability.
+Official puzzle generation lives in the separate [`water-sort-level-generator`](https://github.com/laicwben2/water-sort-level-generator) project. The generator owns candidate creation, A* solving, canonical deduplication, difficulty analysis, validation, and export. This repository owns gameplay, persistence, UI, and loading already-generated levels.
 
-Generation also rejects solved, short, low-transition, and insufficiently mixed boards. The v2 Classic generator accepts only boards with the configured number of empty tubes and every other tube filled to capacity. Difficulty changes color count, transformation depth, and minimum complexity—not only the number of colors. A seeded PRNG makes every `difficulty + level number` combination reproducible, while saved v1 games retain their original board and seed.
+The compatibility boundary is **Level Pack v1**:
 
-The current behavior, uneven starting fill levels, product tradeoffs, and the proposed Classic generator roadmap are documented in [`docs/level-generation-design.md`](docs/level-generation-design.md). The measured 3,000-level v1 baseline is available in [`docs/generator-baseline.md`](docs/generator-baseline.md).
+- `formatVersion` versions the JSON structure.
+- `rulesVersion` versions gameplay semantics.
+- Runtime packs contain only playable level data and small consumer-facing metadata.
+- Solver solutions, search metrics, canonical keys, source seeds, and other audit data stay in the generator project.
 
-The v3 prototype uses canonical board keys and a bounded A* solver entirely during development. It tests the same randomly filled color layout with different empty-tube counts, stores only verified solutions, and is not included in the browser runtime. See [`docs/offline-catalog-v3.md`](docs/offline-catalog-v3.md).
+The current migration pack contains 40 solver-verified levels per difficulty, derived from the existing v3 baseline and expanded prototypes. It is a migration/prototype pack rather than the final production-sized catalog.
+
+See:
+
+- [`docs/architecture.md`](docs/architecture.md)
+- [`docs/level-format-v1.md`](docs/level-format-v1.md)
+- [`docs/repository-split.md`](docs/repository-split.md)
+- [`spec/level-pack-v1.schema.json`](spec/level-pack-v1.schema.json)
+
+Generator/solver authoring code is intentionally absent from this repository. The web runtime does not solve or generate official puzzles on the player's device.
 
 ## Tech stack
 
@@ -56,17 +68,7 @@ Open the local URL printed by Vite.
 npm run test
 ```
 
-The suite covers move validation, contiguous pours, limited capacity, undo, win detection, deterministic seeds, generated-board validity, unsolved starts, and replaying each generated puzzle's guaranteed solution.
-
-Offline catalog development commands:
-
-```bash
-npm run generate:catalog -- --per-difficulty=20
-npm run validate:catalog
-npm run generate:catalog:expanded -- --per-difficulty=20
-```
-
-These commands run the expensive solver before deployment. The baseline profile uses 4/5/6 colors; the expanded profile uses 5/6/7 colors for Easy/Medium/Hard. They are not part of the production build or gameplay path.
+The suite covers move validation, contiguous pours, limited capacity, undo, win detection, persistence, stable record identity, and Level Pack loading/validation. Generator and solver tests live in the separate generator repository.
 
 ## Production build
 
@@ -88,12 +90,12 @@ The project is configured for Vercel. Import the GitHub repository, keep `main` 
 ```text
 src/
 ├── components/       Game board, tubes, controls, and completion dialog
-├── game/             Rules, generators, canonical keys, solver, state, and persistence
+├── game/             Runtime rules, state, and persistence
+├── levels/           Level Pack parser, validation, and generated runtime catalog
 ├── hooks/            UI preference hooks
 ├── i18n/             Centralized interface strings
 ├── utils/            Formatting helpers
 ├── App.tsx            Product composition and interaction animation state
 └── styles.css         Responsive light/dark visual system
-scripts/               Generator analysis and offline catalog tooling
-data/levels/           Versioned solver-verified catalog prototypes
+spec/                  Cross-project Level Pack contract
 ```

@@ -16,14 +16,6 @@ export interface Snapshot {
   moveCount: number
 }
 
-export interface Puzzle {
-  board: Board
-  capacity: number
-  difficulty: Difficulty
-  seed: string
-  solution: Move[]
-  complexity: number
-}
 
 export interface GameRecord {
   bestMoves?: number
