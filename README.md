@@ -1,6 +1,6 @@
 # Water Sort
 
-A polished, mobile-first Water Sort Puzzle built with React, TypeScript, and Vite. The project is being split into a game client and a reusable offline level generator. New games on the refactor branch are loaded from a versioned, solver-verified static Level Pack instead of generating boards in the browser.
+A polished, mobile-first Water Sort Puzzle built with React, TypeScript, and Vite. Official levels are produced offline by the separate `water-sort-level-generator` project and consumed here through a versioned, solver-verified static Level Pack.
 
 ## Features
 
@@ -24,7 +24,7 @@ A polished, mobile-first Water Sort Puzzle built with React, TypeScript, and Vit
 
 ## Level architecture
 
-Official puzzle generation is moving out of the web application into a separate `water-sort-level-generator` project. The generator owns candidate creation, A* solving, canonical deduplication, difficulty analysis, validation, and export. The web game owns only gameplay, persistence, UI, and loading already-generated levels.
+Official puzzle generation lives in the separate [`water-sort-level-generator`](https://github.com/laicwben2/water-sort-level-generator) project. The generator owns candidate creation, A* solving, canonical deduplication, difficulty analysis, validation, and export. This repository owns gameplay, persistence, UI, and loading already-generated levels.
 
 The compatibility boundary is **Level Pack v1**:
 
@@ -42,7 +42,7 @@ See:
 - [`docs/repository-split.md`](docs/repository-split.md)
 - [`spec/level-pack-v1.schema.json`](spec/level-pack-v1.schema.json)
 
-Legacy generator and solver code remains temporarily in this repository until the separate generator repository is created and the authoring files are moved. New gameplay on the refactor branch does not depend on that runtime generator path.
+Generator/solver authoring code is intentionally absent from this repository. The web runtime does not solve or generate official puzzles on the player's device.
 
 ## Tech stack
 
@@ -68,17 +68,7 @@ Open the local URL printed by Vite.
 npm run test
 ```
 
-The suite covers move validation, contiguous pours, limited capacity, undo, win detection, deterministic seeds, generated-board validity, unsolved starts, and replaying each generated puzzle's guaranteed solution.
-
-Offline catalog development commands:
-
-```bash
-npm run generate:catalog -- --per-difficulty=20
-npm run validate:catalog
-npm run generate:catalog:expanded -- --per-difficulty=20
-```
-
-These commands run the expensive solver before deployment. The baseline profile uses 4/5/6 colors; the expanded profile uses 5/6/7 colors for Easy/Medium/Hard. They are not part of the production build or gameplay path.
+The suite covers move validation, contiguous pours, limited capacity, undo, win detection, persistence, stable record identity, and Level Pack loading/validation. Generator and solver tests live in the separate generator repository.
 
 ## Production build
 
@@ -107,7 +97,5 @@ src/
 ├── utils/            Formatting helpers
 ├── App.tsx            Product composition and interaction animation state
 └── styles.css         Responsive light/dark visual system
-scripts/               Temporary legacy generator tooling pending repository split
-data/levels/           Temporary audit/prototype catalogs pending repository split
 spec/                  Cross-project Level Pack contract
 ```
