@@ -1,0 +1,5520 @@
+{
+  "formatVersion": 1,
+  "packId": "prototype-v1-2026-09-22",
+  "generatedBy": "water-sort-level-generator",
+  "levels": [
+    {
+      "id": "v3-baseline-easy-0005",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          3,
+          3,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 8,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0010",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          3,
+          3,
+          1
+        ],
+        [
+          3,
+          0,
+          2,
+          2
+        ],
+        [
+          2,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          3,
+          1,
+          1
+        ],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 9,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0011",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          0,
+          3,
+          3
+        ],
+        [
+          3,
+          0,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 9,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0013",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          2
+        ],
+        [
+          3,
+          3,
+          2,
+          2
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 9,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0002",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          3,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          2
+        ],
+        [
+          2,
+          0,
+          3,
+          2
+        ],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 10,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0004",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          3,
+          1,
+          1
+        ],
+        [
+          0,
+          3,
+          1,
+          2
+        ],
+        [
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          0,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 10,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0007",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          3,
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          3,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 11,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0016",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          1,
+          0,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          3
+        ],
+        [
+          1,
+          2,
+          0,
+          2
+        ],
+        [
+          3,
+          3,
+          2,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 11,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0017",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          3,
+          2
+        ],
+        [
+          0,
+          3,
+          3,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 11,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0003",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          2,
+          3,
+          2,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 12,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0009",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          3,
+          2,
+          3
+        ],
+        [
+          2,
+          1,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 12,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0015",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          0,
+          3,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 12,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0019",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          3,
+          3,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          3
+        ],
+        [
+          1,
+          2,
+          2,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 12,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0005",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          3,
+          3
+        ],
+        [
+          4,
+          2,
+          4,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          4,
+          3,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 12,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0009",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          2,
+          4,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ],
+        [
+          3,
+          3,
+          1,
+          0
+        ],
+        [
+          1,
+          4,
+          0,
+          4
+        ],
+        [
+          0,
+          2,
+          3,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 12,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0015",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          1,
+          4,
+          2
+        ],
+        [
+          1,
+          3,
+          4,
+          1
+        ],
+        [
+          4,
+          4,
+          3,
+          3
+        ],
+        [
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          3,
+          2,
+          0,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 12,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0008",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          2,
+          3,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 13,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0014",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          3,
+          2,
+          0
+        ],
+        [
+          2,
+          3,
+          1,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 13,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0018",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          3,
+          2,
+          3,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 13,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0020",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          3,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          3,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 13,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0008",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          3,
+          2,
+          2
+        ],
+        [
+          0,
+          3,
+          1,
+          1
+        ],
+        [
+          4,
+          1,
+          1,
+          4
+        ],
+        [
+          0,
+          2,
+          3,
+          0
+        ],
+        [
+          4,
+          4,
+          0,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 13,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0017",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          1,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          0,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          4,
+          3
+        ],
+        [
+          4,
+          1,
+          4,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 13,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0001",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          3,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          1
+        ],
+        [
+          3,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          0,
+          2,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0006",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          2,
+          0,
+          3
+        ],
+        [
+          2,
+          1,
+          2,
+          0
+        ],
+        [
+          3,
+          1,
+          3,
+          0
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-easy-0012",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          3,
+          0,
+          2
+        ],
+        [
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          1,
+          2,
+          0,
+          3
+        ],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0004",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          4,
+          2,
+          4
+        ],
+        [
+          4,
+          2,
+          1,
+          3
+        ],
+        [
+          2,
+          0,
+          3,
+          4
+        ],
+        [
+          3,
+          3,
+          2,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0013",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          0,
+          1,
+          2
+        ],
+        [
+          4,
+          0,
+          1,
+          1
+        ],
+        [
+          3,
+          0,
+          2,
+          4
+        ],
+        [
+          3,
+          4,
+          4,
+          2
+        ],
+        [
+          1,
+          3,
+          2,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0014",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          4,
+          4,
+          1
+        ],
+        [
+          3,
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          2,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0007",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          2,
+          4,
+          1
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          4
+        ],
+        [
+          2,
+          2,
+          3,
+          3
+        ],
+        [
+          4,
+          3,
+          4,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0010",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          1,
+          4,
+          1
+        ],
+        [
+          0,
+          2,
+          2,
+          0
+        ],
+        [
+          4,
+          3,
+          0,
+          3
+        ],
+        [
+          1,
+          3,
+          1,
+          3
+        ],
+        [
+          0,
+          4,
+          2,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0011",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          3,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          2,
+          0
+        ],
+        [
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          2,
+          1,
+          0,
+          2
+        ],
+        [
+          4,
+          4,
+          3,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0012",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          2,
+          1,
+          3
+        ],
+        [
+          2,
+          3,
+          4,
+          0
+        ],
+        [
+          3,
+          0,
+          1,
+          3
+        ],
+        [
+          1,
+          4,
+          1,
+          4
+        ],
+        [
+          2,
+          2,
+          0,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0018",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          4,
+          0,
+          3
+        ],
+        [
+          0,
+          3,
+          0,
+          0
+        ],
+        [
+          1,
+          4,
+          2,
+          2
+        ],
+        [
+          1,
+          1,
+          3,
+          4
+        ],
+        [
+          4,
+          1,
+          3,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0020",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          1,
+          2,
+          2
+        ],
+        [
+          1,
+          0,
+          3,
+          4
+        ],
+        [
+          4,
+          1,
+          3,
+          0
+        ],
+        [
+          3,
+          3,
+          0,
+          2
+        ],
+        [
+          1,
+          4,
+          2,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0002",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          4,
+          0,
+          4
+        ],
+        [
+          3,
+          2,
+          1,
+          3
+        ],
+        [
+          4,
+          2,
+          1,
+          3
+        ],
+        [
+          0,
+          4,
+          3,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 16,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0016",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          4,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          4,
+          2
+        ],
+        [
+          2,
+          4,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          3,
+          1,
+          3,
+          0
+        ],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 16,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0001",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          3,
+          0,
+          1
+        ],
+        [
+          4,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          4,
+          2,
+          4
+        ],
+        [
+          0,
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          0,
+          2,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0003",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          0,
+          3,
+          4
+        ],
+        [
+          0,
+          4,
+          2,
+          4
+        ],
+        [
+          0,
+          3,
+          4,
+          1
+        ],
+        [
+          1,
+          2,
+          3,
+          2
+        ],
+        [
+          1,
+          0,
+          3,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0006",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          2,
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          0,
+          4
+        ],
+        [
+          2,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          4,
+          3,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          4
+        ],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-easy-0019",
+      "difficulty": "easy",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          2,
+          4,
+          3
+        ],
+        [
+          3,
+          0,
+          4,
+          1
+        ],
+        [
+          3,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          4,
+          2,
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0019",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          4,
+          4,
+          1
+        ],
+        [
+          4,
+          4,
+          3,
+          3
+        ],
+        [
+          0,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          3,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 11,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0002",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          4,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          4,
+          0
+        ],
+        [
+          1,
+          0,
+          4,
+          3
+        ],
+        [
+          2,
+          3,
+          3,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 12,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0004",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          2,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          4,
+          3
+        ],
+        [
+          1,
+          1,
+          3,
+          4
+        ],
+        [
+          3,
+          0,
+          0,
+          4
+        ],
+        [
+          2,
+          2,
+          0,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0010",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          4,
+          0,
+          1
+        ],
+        [
+          4,
+          4,
+          1,
+          2
+        ],
+        [
+          0,
+          2,
+          2,
+          1
+        ],
+        [
+          3,
+          3,
+          1,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0011",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          0,
+          1,
+          3
+        ],
+        [
+          3,
+          4,
+          2,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          0
+        ],
+        [
+          3,
+          0,
+          2,
+          2
+        ],
+        [
+          3,
+          4,
+          4,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0012",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          3,
+          3,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          4,
+          4
+        ],
+        [
+          2,
+          0,
+          4,
+          1
+        ],
+        [
+          2,
+          4,
+          3,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0018",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          2,
+          0,
+          2
+        ],
+        [
+          3,
+          3,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          1,
+          0
+        ],
+        [
+          3,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          4,
+          1,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 14,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0006",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          1,
+          1,
+          0
+        ],
+        [
+          3,
+          4,
+          4,
+          4
+        ],
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          3,
+          1,
+          2,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0007",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          4,
+          3,
+          0
+        ],
+        [
+          4,
+          2,
+          2,
+          4
+        ],
+        [
+          1,
+          4,
+          3,
+          1
+        ],
+        [
+          0,
+          0,
+          2,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0008",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          2,
+          3,
+          1
+        ],
+        [
+          4,
+          0,
+          4,
+          3
+        ],
+        [
+          4,
+          0,
+          2,
+          4
+        ],
+        [
+          2,
+          0,
+          1,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0013",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          1,
+          4,
+          4
+        ],
+        [
+          4,
+          1,
+          3,
+          0
+        ],
+        [
+          3,
+          0,
+          2,
+          1
+        ],
+        [
+          4,
+          1,
+          3,
+          0
+        ],
+        [
+          2,
+          2,
+          3,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0014",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          3,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          4,
+          2
+        ],
+        [
+          3,
+          0,
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          4,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0017",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          2,
+          4,
+          1
+        ],
+        [
+          3,
+          3,
+          0,
+          4
+        ],
+        [
+          4,
+          0,
+          4,
+          2
+        ],
+        [
+          2,
+          2,
+          0,
+          1
+        ],
+        [
+          3,
+          1,
+          3,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0008",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          5,
+          4,
+          3,
+          5
+        ],
+        [
+          0,
+          0,
+          1,
+          4
+        ],
+        [
+          3,
+          4,
+          1,
+          1
+        ],
+        [
+          3,
+          5,
+          0,
+          0
+        ],
+        [
+          4,
+          2,
+          2,
+          3
+        ],
+        [
+          1,
+          5,
+          2,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0003",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          1,
+          4,
+          1
+        ],
+        [
+          2,
+          0,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          1,
+          3
+        ],
+        [
+          4,
+          3,
+          4,
+          4
+        ],
+        [
+          3,
+          1,
+          0,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 16,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0020",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          2,
+          4,
+          4
+        ],
+        [
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          3,
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0,
+          2
+        ],
+        [
+          1,
+          0,
+          3,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 16,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0002",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          3,
+          0,
+          1
+        ],
+        [
+          3,
+          2,
+          5,
+          2
+        ],
+        [
+          3,
+          2,
+          2,
+          0
+        ],
+        [
+          5,
+          1,
+          5,
+          0
+        ],
+        [
+          4,
+          1,
+          1,
+          0
+        ],
+        [
+          4,
+          4,
+          4,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 16,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0004",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          1,
+          3,
+          5
+        ],
+        [
+          0,
+          0,
+          3,
+          5
+        ],
+        [
+          4,
+          1,
+          0,
+          2
+        ],
+        [
+          4,
+          2,
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          3,
+          4
+        ],
+        [
+          5,
+          5,
+          1,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 16,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0007",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          2,
+          2,
+          2
+        ],
+        [
+          0,
+          1,
+          5,
+          1
+        ],
+        [
+          1,
+          5,
+          4,
+          3
+        ],
+        [
+          0,
+          1,
+          0,
+          5
+        ],
+        [
+          3,
+          3,
+          4,
+          4
+        ],
+        [
+          4,
+          5,
+          2,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 16,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0015",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          3,
+          2,
+          3
+        ],
+        [
+          0,
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          4,
+          4,
+          2
+        ],
+        [
+          1,
+          4,
+          2,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0016",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          1,
+          0,
+          2
+        ],
+        [
+          3,
+          1,
+          3,
+          3
+        ],
+        [
+          2,
+          4,
+          1,
+          0
+        ],
+        [
+          2,
+          4,
+          3,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0005",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          1,
+          5,
+          2
+        ],
+        [
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          0,
+          5,
+          4,
+          1
+        ],
+        [
+          4,
+          1,
+          3,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          4
+        ],
+        [
+          5,
+          3,
+          2,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0006",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          5,
+          1,
+          1,
+          4
+        ],
+        [
+          3,
+          3,
+          1,
+          4
+        ],
+        [
+          5,
+          0,
+          3,
+          4
+        ],
+        [
+          0,
+          0,
+          2,
+          2
+        ],
+        [
+          5,
+          1,
+          2,
+          4
+        ],
+        [
+          5,
+          2,
+          0,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0009",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          2,
+          0,
+          2
+        ],
+        [
+          3,
+          4,
+          1,
+          0
+        ],
+        [
+          4,
+          5,
+          1,
+          5
+        ],
+        [
+          3,
+          1,
+          4,
+          4
+        ],
+        [
+          3,
+          3,
+          2,
+          5
+        ],
+        [
+          5,
+          2,
+          0,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0001",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          0,
+          4,
+          2,
+          0
+        ],
+        [
+          3,
+          1,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          2,
+          1
+        ],
+        [
+          3,
+          0,
+          1,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0005",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          4,
+          0,
+          4
+        ],
+        [
+          2,
+          4,
+          1,
+          3
+        ],
+        [
+          2,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1
+        ],
+        [
+          2,
+          3,
+          4,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-medium-0009",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          2,
+          4,
+          3
+        ],
+        [
+          0,
+          2,
+          1,
+          4
+        ],
+        [
+          0,
+          4,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          1,
+          0
+        ],
+        [
+          0,
+          3,
+          2,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0001",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          5,
+          5,
+          3
+        ],
+        [
+          4,
+          4,
+          2,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          4,
+          0,
+          4,
+          1
+        ],
+        [
+          3,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          3,
+          5,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0011",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          4,
+          1,
+          3
+        ],
+        [
+          0,
+          3,
+          3,
+          4
+        ],
+        [
+          0,
+          0,
+          5,
+          1
+        ],
+        [
+          4,
+          3,
+          4,
+          5
+        ],
+        [
+          2,
+          2,
+          1,
+          5
+        ],
+        [
+          2,
+          5,
+          1,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0012",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          1,
+          3,
+          5
+        ],
+        [
+          3,
+          2,
+          5,
+          1
+        ],
+        [
+          4,
+          2,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          0,
+          1
+        ],
+        [
+          0,
+          4,
+          0,
+          1
+        ],
+        [
+          5,
+          0,
+          3,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0015",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          1,
+          2,
+          2
+        ],
+        [
+          3,
+          0,
+          5,
+          3
+        ],
+        [
+          0,
+          5,
+          0,
+          2
+        ],
+        [
+          4,
+          3,
+          5,
+          3
+        ],
+        [
+          1,
+          4,
+          4,
+          2
+        ],
+        [
+          0,
+          1,
+          5,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0017",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          1,
+          2,
+          1
+        ],
+        [
+          5,
+          4,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          2,
+          2
+        ],
+        [
+          0,
+          4,
+          0,
+          1
+        ],
+        [
+          5,
+          0,
+          5,
+          2
+        ],
+        [
+          4,
+          5,
+          3,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0018",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          5,
+          1,
+          5,
+          3
+        ],
+        [
+          1,
+          4,
+          4,
+          0
+        ],
+        [
+          5,
+          1,
+          4,
+          3
+        ],
+        [
+          2,
+          2,
+          3,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0
+        ],
+        [
+          5,
+          3,
+          4,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0019",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          5,
+          2,
+          4,
+          2
+        ],
+        [
+          5,
+          3,
+          0,
+          2
+        ],
+        [
+          4,
+          4,
+          5,
+          1
+        ],
+        [
+          3,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          5
+        ],
+        [
+          0,
+          3,
+          0,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0020",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          1,
+          1,
+          5
+        ],
+        [
+          4,
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          5,
+          3,
+          0
+        ],
+        [
+          4,
+          0,
+          5,
+          3
+        ],
+        [
+          4,
+          0,
+          2,
+          1
+        ],
+        [
+          3,
+          4,
+          5,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 19,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0003",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          2,
+          0,
+          2
+        ],
+        [
+          2,
+          1,
+          5,
+          4
+        ],
+        [
+          1,
+          4,
+          1,
+          5
+        ],
+        [
+          0,
+          4,
+          5,
+          3
+        ],
+        [
+          5,
+          1,
+          2,
+          3
+        ],
+        [
+          3,
+          0,
+          4,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0010",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          2,
+          0,
+          2
+        ],
+        [
+          0,
+          5,
+          1,
+          0
+        ],
+        [
+          5,
+          1,
+          5,
+          4
+        ],
+        [
+          4,
+          5,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          1,
+          0
+        ],
+        [
+          3,
+          2,
+          3,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0013",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          2,
+          1,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          1
+        ],
+        [
+          2,
+          2,
+          0,
+          4
+        ],
+        [
+          1,
+          5,
+          0,
+          3
+        ],
+        [
+          4,
+          0,
+          4,
+          5
+        ],
+        [
+          4,
+          0,
+          2,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0014",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          4,
+          3,
+          2
+        ],
+        [
+          1,
+          4,
+          2,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          5
+        ],
+        [
+          3,
+          5,
+          3,
+          1
+        ],
+        [
+          5,
+          4,
+          0,
+          5
+        ],
+        [
+          3,
+          2,
+          4,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-medium-0016",
+      "difficulty": "medium",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          5,
+          2,
+          1,
+          4
+        ],
+        [
+          1,
+          5,
+          4,
+          5
+        ],
+        [
+          2,
+          3,
+          5,
+          2
+        ],
+        [
+          1,
+          2,
+          4,
+          3
+        ],
+        [
+          1,
+          0,
+          3,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0016",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          0,
+          4,
+          4
+        ],
+        [
+          3,
+          3,
+          1,
+          2
+        ],
+        [
+          1,
+          0,
+          1,
+          3
+        ],
+        [
+          5,
+          3,
+          0,
+          2
+        ],
+        [
+          2,
+          4,
+          1,
+          2
+        ],
+        [
+          4,
+          5,
+          5,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 15,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0008",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          1,
+          2,
+          4
+        ],
+        [
+          2,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          3,
+          3
+        ],
+        [
+          3,
+          4,
+          0,
+          3
+        ],
+        [
+          5,
+          0,
+          5,
+          1
+        ],
+        [
+          4,
+          4,
+          2,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 17,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0003",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          0,
+          1,
+          4
+        ],
+        [
+          5,
+          3,
+          4,
+          0
+        ],
+        [
+          2,
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          5,
+          3,
+          2
+        ],
+        [
+          5,
+          4,
+          1,
+          3
+        ],
+        [
+          1,
+          4,
+          5,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0004",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          2,
+          3,
+          1
+        ],
+        [
+          5,
+          4,
+          1,
+          5
+        ],
+        [
+          5,
+          3,
+          2,
+          2
+        ],
+        [
+          5,
+          4,
+          1,
+          1
+        ],
+        [
+          4,
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          4,
+          0,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0007",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          4,
+          4,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          2
+        ],
+        [
+          5,
+          3,
+          1,
+          3
+        ],
+        [
+          5,
+          4,
+          2,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          5,
+          4,
+          2,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0011",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          3,
+          2,
+          5
+        ],
+        [
+          0,
+          5,
+          2,
+          4
+        ],
+        [
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          1,
+          5,
+          1
+        ],
+        [
+          2,
+          4,
+          4,
+          3
+        ],
+        [
+          5,
+          3,
+          4,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0013",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          0,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          5,
+          1
+        ],
+        [
+          5,
+          2,
+          4,
+          1
+        ],
+        [
+          5,
+          3,
+          4,
+          2
+        ],
+        [
+          1,
+          1,
+          2,
+          4
+        ],
+        [
+          5,
+          4,
+          3,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0014",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          3,
+          2,
+          1
+        ],
+        [
+          0,
+          5,
+          1,
+          0
+        ],
+        [
+          4,
+          4,
+          5,
+          5
+        ],
+        [
+          2,
+          5,
+          3,
+          4
+        ],
+        [
+          0,
+          0,
+          3,
+          1
+        ],
+        [
+          2,
+          4,
+          1,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0018",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          2,
+          3,
+          4
+        ],
+        [
+          0,
+          5,
+          5,
+          2
+        ],
+        [
+          0,
+          1,
+          3,
+          0
+        ],
+        [
+          3,
+          4,
+          0,
+          1
+        ],
+        [
+          1,
+          5,
+          5,
+          4
+        ],
+        [
+          4,
+          2,
+          2,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 18,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0001",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          4,
+          0,
+          3
+        ],
+        [
+          4,
+          2,
+          2,
+          5
+        ],
+        [
+          4,
+          3,
+          1,
+          3
+        ],
+        [
+          0,
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          5,
+          3,
+          5
+        ],
+        [
+          5,
+          0,
+          1,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 19,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0006",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          3,
+          2,
+          0
+        ],
+        [
+          4,
+          5,
+          4,
+          5
+        ],
+        [
+          1,
+          4,
+          0,
+          1
+        ],
+        [
+          5,
+          2,
+          3,
+          2
+        ],
+        [
+          3,
+          5,
+          1,
+          0
+        ],
+        [
+          0,
+          2,
+          4,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 19,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0012",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          4,
+          1,
+          2
+        ],
+        [
+          3,
+          1,
+          0,
+          5
+        ],
+        [
+          3,
+          4,
+          0,
+          0
+        ],
+        [
+          2,
+          5,
+          2,
+          0
+        ],
+        [
+          5,
+          2,
+          1,
+          4
+        ],
+        [
+          4,
+          3,
+          5,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 19,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0019",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          3,
+          0,
+          4,
+          0
+        ],
+        [
+          4,
+          5,
+          0,
+          5
+        ],
+        [
+          2,
+          4,
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          5
+        ],
+        [
+          5,
+          0,
+          2,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 19,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0020",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          5,
+          2,
+          4
+        ],
+        [
+          2,
+          0,
+          4,
+          2
+        ],
+        [
+          0,
+          1,
+          3,
+          3
+        ],
+        [
+          1,
+          5,
+          3,
+          0
+        ],
+        [
+          2,
+          1,
+          4,
+          3
+        ],
+        [
+          1,
+          5,
+          5,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 19,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0004",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          3,
+          3,
+          4
+        ],
+        [
+          2,
+          2,
+          1,
+          5
+        ],
+        [
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          6,
+          4
+        ],
+        [
+          1,
+          4,
+          5,
+          6
+        ],
+        [
+          3,
+          2,
+          1,
+          5
+        ],
+        [
+          0,
+          5,
+          6,
+          6
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 19,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0011",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          1,
+          4,
+          4
+        ],
+        [
+          4,
+          3,
+          0,
+          2
+        ],
+        [
+          6,
+          4,
+          5,
+          6
+        ],
+        [
+          2,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          6,
+          5,
+          5
+        ],
+        [
+          3,
+          2,
+          3,
+          1
+        ],
+        [
+          2,
+          1,
+          5,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 19,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0002",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          5,
+          2,
+          1,
+          2
+        ],
+        [
+          5,
+          0,
+          2,
+          4
+        ],
+        [
+          4,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          0,
+          3,
+          0
+        ],
+        [
+          3,
+          5,
+          1,
+          3
+        ],
+        [
+          4,
+          1,
+          0,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0005",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          4,
+          1,
+          5,
+          3
+        ],
+        [
+          5,
+          2,
+          0,
+          3
+        ],
+        [
+          3,
+          2,
+          4,
+          0
+        ],
+        [
+          5,
+          0,
+          1,
+          4
+        ],
+        [
+          5,
+          4,
+          2,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0009",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          0,
+          5,
+          3
+        ],
+        [
+          4,
+          2,
+          1,
+          4
+        ],
+        [
+          2,
+          5,
+          3,
+          4
+        ],
+        [
+          1,
+          0,
+          2,
+          0
+        ],
+        [
+          3,
+          1,
+          3,
+          0
+        ],
+        [
+          2,
+          5,
+          5,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0010",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          5,
+          3,
+          4,
+          0
+        ],
+        [
+          2,
+          3,
+          0,
+          4
+        ],
+        [
+          2,
+          3,
+          5,
+          1
+        ],
+        [
+          2,
+          1,
+          2,
+          5
+        ],
+        [
+          3,
+          1,
+          4,
+          0
+        ],
+        [
+          4,
+          5,
+          1,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0015",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          4,
+          3,
+          3
+        ],
+        [
+          4,
+          5,
+          3,
+          1
+        ],
+        [
+          0,
+          1,
+          5,
+          2
+        ],
+        [
+          1,
+          0,
+          5,
+          1
+        ],
+        [
+          3,
+          5,
+          2,
+          0
+        ],
+        [
+          2,
+          4,
+          0,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0005",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          5,
+          6,
+          0,
+          4
+        ],
+        [
+          3,
+          2,
+          3,
+          2
+        ],
+        [
+          0,
+          4,
+          4,
+          0
+        ],
+        [
+          6,
+          3,
+          1,
+          4
+        ],
+        [
+          1,
+          1,
+          2,
+          0
+        ],
+        [
+          5,
+          6,
+          5,
+          1
+        ],
+        [
+          2,
+          6,
+          3,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0009",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          3,
+          0,
+          6
+        ],
+        [
+          6,
+          5,
+          2,
+          5
+        ],
+        [
+          2,
+          0,
+          5,
+          2
+        ],
+        [
+          0,
+          3,
+          1,
+          4
+        ],
+        [
+          5,
+          1,
+          1,
+          6
+        ],
+        [
+          2,
+          1,
+          4,
+          4
+        ],
+        [
+          0,
+          6,
+          4,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0015",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          4,
+          1,
+          1
+        ],
+        [
+          2,
+          4,
+          3,
+          2
+        ],
+        [
+          4,
+          3,
+          2,
+          3
+        ],
+        [
+          3,
+          0,
+          6,
+          0
+        ],
+        [
+          0,
+          2,
+          5,
+          1
+        ],
+        [
+          0,
+          6,
+          6,
+          5
+        ],
+        [
+          1,
+          5,
+          6,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0017",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          4,
+          0,
+          2
+        ],
+        [
+          5,
+          0,
+          3,
+          3
+        ],
+        [
+          0,
+          0,
+          6,
+          5
+        ],
+        [
+          1,
+          1,
+          5,
+          4
+        ],
+        [
+          6,
+          6,
+          4,
+          2
+        ],
+        [
+          6,
+          4,
+          3,
+          2
+        ],
+        [
+          3,
+          2,
+          1,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0018",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          4,
+          4,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          6
+        ],
+        [
+          3,
+          4,
+          6,
+          0
+        ],
+        [
+          6,
+          2,
+          5,
+          0
+        ],
+        [
+          5,
+          3,
+          0,
+          1
+        ],
+        [
+          6,
+          3,
+          3,
+          5
+        ],
+        [
+          0,
+          5,
+          4,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 20,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-baseline-hard-0017",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          1,
+          4,
+          0
+        ],
+        [
+          4,
+          2,
+          5,
+          0
+        ],
+        [
+          3,
+          1,
+          2,
+          3
+        ],
+        [
+          0,
+          5,
+          3,
+          2
+        ],
+        [
+          2,
+          4,
+          1,
+          5
+        ],
+        [
+          4,
+          5,
+          3,
+          1
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 21,
+        "sourceCatalog": "baseline"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0001",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          5,
+          2,
+          2,
+          6
+        ],
+        [
+          0,
+          0,
+          3,
+          5
+        ],
+        [
+          1,
+          3,
+          6,
+          1
+        ],
+        [
+          1,
+          4,
+          1,
+          0
+        ],
+        [
+          3,
+          5,
+          2,
+          4
+        ],
+        [
+          6,
+          3,
+          4,
+          0
+        ],
+        [
+          2,
+          4,
+          6,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 21,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0008",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          3,
+          5,
+          0
+        ],
+        [
+          3,
+          0,
+          6,
+          0
+        ],
+        [
+          2,
+          4,
+          2,
+          5
+        ],
+        [
+          6,
+          1,
+          2,
+          5
+        ],
+        [
+          4,
+          1,
+          3,
+          6
+        ],
+        [
+          0,
+          1,
+          1,
+          3
+        ],
+        [
+          6,
+          5,
+          4,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 21,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0019",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          4,
+          6,
+          6
+        ],
+        [
+          0,
+          2,
+          6,
+          5
+        ],
+        [
+          1,
+          5,
+          2,
+          2
+        ],
+        [
+          0,
+          3,
+          3,
+          1
+        ],
+        [
+          0,
+          6,
+          5,
+          0
+        ],
+        [
+          3,
+          1,
+          2,
+          4
+        ],
+        [
+          4,
+          3,
+          5,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 21,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0002",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          5,
+          5,
+          4,
+          1
+        ],
+        [
+          3,
+          2,
+          4,
+          1
+        ],
+        [
+          6,
+          3,
+          3,
+          2
+        ],
+        [
+          0,
+          5,
+          0,
+          2
+        ],
+        [
+          6,
+          4,
+          3,
+          1
+        ],
+        [
+          6,
+          5,
+          2,
+          6
+        ],
+        [
+          1,
+          0,
+          4,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 22,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0003",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          0,
+          6,
+          0
+        ],
+        [
+          2,
+          0,
+          5,
+          1
+        ],
+        [
+          3,
+          2,
+          3,
+          1
+        ],
+        [
+          0,
+          4,
+          6,
+          6
+        ],
+        [
+          3,
+          5,
+          2,
+          4
+        ],
+        [
+          3,
+          6,
+          1,
+          4
+        ],
+        [
+          1,
+          4,
+          5,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 22,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0006",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          0,
+          3,
+          6
+        ],
+        [
+          4,
+          3,
+          6,
+          0
+        ],
+        [
+          2,
+          4,
+          5,
+          0
+        ],
+        [
+          3,
+          1,
+          5,
+          1
+        ],
+        [
+          4,
+          2,
+          6,
+          2
+        ],
+        [
+          5,
+          1,
+          6,
+          1
+        ],
+        [
+          2,
+          3,
+          4,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 22,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0012",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          0,
+          4,
+          2,
+          4
+        ],
+        [
+          0,
+          5,
+          2,
+          1
+        ],
+        [
+          4,
+          5,
+          6,
+          3
+        ],
+        [
+          5,
+          4,
+          0,
+          3
+        ],
+        [
+          3,
+          0,
+          6,
+          1
+        ],
+        [
+          1,
+          1,
+          2,
+          3
+        ],
+        [
+          6,
+          5,
+          2,
+          6
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 22,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0014",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          1,
+          0,
+          6
+        ],
+        [
+          2,
+          6,
+          6,
+          0
+        ],
+        [
+          4,
+          5,
+          0,
+          4
+        ],
+        [
+          3,
+          1,
+          5,
+          0
+        ],
+        [
+          5,
+          4,
+          3,
+          6
+        ],
+        [
+          1,
+          5,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          3,
+          2
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 22,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0010",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          3,
+          0,
+          3,
+          0
+        ],
+        [
+          6,
+          2,
+          0,
+          1
+        ],
+        [
+          3,
+          4,
+          5,
+          1
+        ],
+        [
+          2,
+          4,
+          4,
+          2
+        ],
+        [
+          6,
+          1,
+          2,
+          6
+        ],
+        [
+          6,
+          4,
+          0,
+          5
+        ],
+        [
+          3,
+          1,
+          5,
+          5
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 23,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0020",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          4,
+          0,
+          2,
+          4
+        ],
+        [
+          3,
+          6,
+          6,
+          2
+        ],
+        [
+          1,
+          2,
+          6,
+          0
+        ],
+        [
+          4,
+          5,
+          1,
+          0
+        ],
+        [
+          4,
+          3,
+          5,
+          2
+        ],
+        [
+          6,
+          5,
+          1,
+          5
+        ],
+        [
+          3,
+          0,
+          1,
+          3
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 23,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0007",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          6,
+          1,
+          3,
+          4
+        ],
+        [
+          6,
+          1,
+          1,
+          5
+        ],
+        [
+          0,
+          6,
+          2,
+          3
+        ],
+        [
+          6,
+          1,
+          3,
+          3
+        ],
+        [
+          4,
+          5,
+          2,
+          0
+        ],
+        [
+          4,
+          5,
+          2,
+          0
+        ],
+        [
+          4,
+          5,
+          2,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 24,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0016",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          2,
+          5,
+          2,
+          1
+        ],
+        [
+          1,
+          3,
+          6,
+          4
+        ],
+        [
+          0,
+          3,
+          0,
+          3
+        ],
+        [
+          6,
+          2,
+          3,
+          1
+        ],
+        [
+          4,
+          5,
+          1,
+          6
+        ],
+        [
+          0,
+          5,
+          0,
+          5
+        ],
+        [
+          4,
+          6,
+          2,
+          4
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 24,
+        "sourceCatalog": "expanded"
+      }
+    },
+    {
+      "id": "v3-expanded-hard-0013",
+      "difficulty": "hard",
+      "capacity": 4,
+      "board": [
+        [
+          1,
+          0,
+          2,
+          6
+        ],
+        [
+          1,
+          3,
+          5,
+          4
+        ],
+        [
+          1,
+          4,
+          5,
+          0
+        ],
+        [
+          6,
+          5,
+          3,
+          2
+        ],
+        [
+          1,
+          3,
+          4,
+          6
+        ],
+        [
+          0,
+          3,
+          6,
+          4
+        ],
+        [
+          2,
+          5,
+          2,
+          0
+        ],
+        [],
+        []
+      ],
+      "metadata": {
+        "optimalMoves": 25,
+        "sourceCatalog": "expanded"
+      }
+    }
+  ]
+}
