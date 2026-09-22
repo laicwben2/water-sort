@@ -117,3 +117,36 @@ Before the split branch replaces production:
 - run `water-sort` unit tests and production build;
 - verify Level, Random, Undo, Restart, reload restoration, and completion flows;
 - remove the obsolete generator/solver code and generator scripts from the game repository.
+
+
+## Bootstrap branch prepared
+
+A standalone project tree is prepared on the temporary branch:
+
+```text
+generator/bootstrap
+```
+
+That branch contains only the generator project tree: Node/TypeScript CLI, solver, generator, validator, exporter, tests, CI, documentation, and the Level Pack v1 schema. It does not contain the React/Vite game client.
+
+Because the connected GitHub integration cannot create repositories, create an empty repository named `water-sort-level-generator` first. Then migrate the prepared tree locally.
+
+Recommended clean-history migration:
+
+```bash
+git clone https://github.com/laicwben2/water-sort.git
+cd water-sort
+git switch generator/bootstrap
+
+# Create a clean root commit containing only the prepared generator tree.
+git switch --orphan generator-main
+git add -A
+git commit -m "Initial standalone Water Sort level generator"
+
+git remote add generator https://github.com/laicwben2/water-sort-level-generator.git
+git push -u generator generator-main:main
+```
+
+The orphan commit is intentional: `generator/bootstrap` was prepared inside the original repository and therefore has a historical parent from `water-sort`. Creating a new root commit prevents the new generator repository from inheriting unrelated Web-game history.
+
+After the new repository exists and its CI passes, the corresponding authoring-only files can be deleted from the Web repository and the Draft split PR can be finalized.
