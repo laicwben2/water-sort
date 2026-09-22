@@ -10,6 +10,7 @@ export interface GameState {
   level: number
   unlockedLevel: number
   seed: string
+  capacity: number
   board: Board
   initialBoard: Board
   history: Snapshot[]
@@ -44,6 +45,7 @@ function makeGame(difficulty: Difficulty, mode: GameMode, level: number): GameSt
     level: resolvedLevel,
     unlockedLevel: loadProgress(difficulty),
     seed: actualSeed,
+    capacity: puzzle.capacity,
     board: cloneBoard(puzzle.board),
     initialBoard: cloneBoard(puzzle.board),
     history: [],
@@ -61,6 +63,7 @@ function restoreGame(saved: SavedGame): GameState {
     : 0
   return {
     ...saved,
+    capacity: saved.capacity ?? 4,
     board: cloneBoard(saved.board),
     initialBoard: cloneBoard(saved.initialBoard),
     history: saved.history.map((snapshot) => ({ ...snapshot, board: cloneBoard(snapshot.board) })),
@@ -78,7 +81,7 @@ function reducer(state: GameState, action: Action): GameState {
   switch (action.type) {
     case 'MOVE': {
       const board = applyMove(state.board, action.move)
-      const completed = isSolved(board)
+      const completed = isSolved(board, state.capacity)
       const next = {
         ...state,
         board,
@@ -123,6 +126,7 @@ export function useGame() {
       level: state.level,
       unlockedLevel: state.unlockedLevel,
       seed: state.seed,
+      capacity: state.capacity,
       board: state.board,
       initialBoard: state.initialBoard,
       history: state.history,
@@ -135,7 +139,7 @@ export function useGame() {
   }, [state])
 
   const pour = useCallback((from: number, to: number) => {
-    const move = calculatePour(state.board, from, to)
+    const move = calculatePour(state.board, from, to, state.capacity)
     if (!move || state.completed) return null
     dispatch({ type: 'MOVE', move })
     return move
