@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useReducer } from 'react'
-import { generatePuzzle, levelSeed, randomSeed } from './generator'
+import { getLevelByNumber, getRandomLevel, levelCount } from '../levels/catalog'
 import { calculatePour, cloneBoard, isSolved, applyMove } from './rules'
 import { loadGame, loadProgress, loadRecord, recordKey, saveGame, saveProgress, saveRecord, type SavedGame } from './persistence'
 import type { Board, Difficulty, GameMode, GameRecord, Move, Snapshot } from './types'
@@ -27,14 +27,21 @@ type Action =
   | { type: 'RESTART' }
   | { type: 'LOAD'; state: GameState }
 
-function makeGame(difficulty: Difficulty, mode: GameMode, level: number, seed?: string): GameState {
-  const actualSeed = seed ?? (mode === 'level' ? levelSeed(difficulty, level) : randomSeed())
-  const puzzle = generatePuzzle(difficulty, actualSeed)
-  const key = recordKey(difficulty, mode, level, actualSeed)
+function makeGame(difficulty: Difficulty, mode: GameMode, level: number): GameState {
+  const availableLevels = levelCount(difficulty)
+  if (availableLevels < 1) throw new Error(`No ${difficulty} levels are available`)
+  const resolvedLevel = mode === 'level'
+    ? Math.min(Math.max(1, Math.floor(level)), availableLevels)
+    : 0
+  const puzzle = mode === 'level'
+    ? getLevelByNumber(difficulty, resolvedLevel)
+    : getRandomLevel(difficulty)
+  const actualSeed = puzzle.id
+  const key = recordKey(difficulty, mode, resolvedLevel, actualSeed)
   return {
     difficulty,
     mode,
-    level,
+    level: resolvedLevel,
     unlockedLevel: loadProgress(difficulty),
     seed: actualSeed,
     board: cloneBoard(puzzle.board),
@@ -134,8 +141,8 @@ export function useGame() {
     return move
   }, [state.board, state.completed])
 
-  const load = useCallback((difficulty: Difficulty, mode: GameMode, level: number, seed?: string) => {
-    dispatch({ type: 'LOAD', state: makeGame(difficulty, mode, level, seed) })
+  const load = useCallback((difficulty: Difficulty, mode: GameMode, level: number) => {
+    dispatch({ type: 'LOAD', state: makeGame(difficulty, mode, level) })
   }, [])
 
   return useMemo(() => ({
@@ -145,7 +152,7 @@ export function useGame() {
     restart: () => dispatch({ type: 'RESTART' }),
     changeDifficulty: (difficulty: Difficulty) => load(difficulty, 'level', loadProgress(difficulty)),
     newRandomGame: () => load(state.difficulty, 'random', 0),
-    nextLevel: () => load(state.difficulty, 'level', state.level + 1),
+    nextLevel: () => load(state.difficulty, 'level', Math.min(state.level + 1, levelCount(state.difficulty))),
     replay: () => dispatch({ type: 'RESTART' }),
   }), [load, pour, state])
 }
