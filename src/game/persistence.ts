@@ -11,6 +11,7 @@ export interface SavedGame {
   level: number
   unlockedLevel: number
   seed: string
+  capacity?: number
   board: Board
   initialBoard: Board
   history: Snapshot[]
