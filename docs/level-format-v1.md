@@ -50,7 +50,6 @@ Level Pack v1 is the compatibility boundary between the offline Water Sort gener
 - `capacity`: maximum number of layers in a tube.
 - `board`: bottom-to-top color IDs for each tube. An empty array is an empty tube.
 - `metadata.optimalMoves`: optional solver-derived minimum move count.
-- `metadata.sourceCatalog`: optional provenance label used by the current migration pack.
 
 ## Invariants
 
