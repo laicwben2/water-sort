@@ -1,36 +1,20 @@
 {
-  "name": "water-sort",
+  "name": "water-sort-level-generator",
+  "version": "0.1.0",
   "private": true,
-  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
-    "build": "tsc -b && vite build",
-    "analyze:generator": "node scripts/analyze-generator.mjs",
-    "generate:catalog": "node scripts/generate-catalog.mjs",
-    "generate:catalog:expanded": "node scripts/generate-catalog.mjs --profile=expanded",
-    "validate:catalog": "node scripts/validate-catalog.mjs",
+    "build": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint ."
-  },
-  "dependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "typescript": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "lucide-react": "latest"
+    "generate": "tsx src/cli/generate.ts",
+    "validate": "tsx src/cli/validate.ts",
+    "export:runtime": "tsx src/cli/export-runtime.ts"
   },
   "devDependencies": {
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "vitest": "latest",
-    "eslint": "latest",
-    "typescript-eslint": "latest",
-    "@eslint/js": "latest",
-    "eslint-plugin-react-hooks": "latest",
-    "eslint-plugin-react-refresh": "latest",
-    "globals": "latest"
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
   }
 }

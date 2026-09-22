@@ -1,11 +1,5 @@
-node_modules
-dist
-.DS_Store
-.env
-.env.*
-!.env.example
-.vercel
-.sites-runtime
-coverage
-*.log
-*.tsbuildinfo
+node_modules/
+coverage/
+data/audit/*.json
+data/output/*.json
+!.gitkeep
