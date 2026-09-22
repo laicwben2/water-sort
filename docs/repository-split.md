@@ -1,43 +1,31 @@
-# Repository split migration
+# Repository split
 
 Date: 2026-09-22
 
-## Target repositories
+## Status
 
-- `laicwben2/water-sort`: game client only.
-- `laicwben2/water-sort-level-generator`: reusable offline generator.
+The Water Sort repository split is complete.
 
-## Files to move to the generator repository
+- Game client: https://github.com/laicwben2/water-sort
+- Offline generator: https://github.com/laicwben2/water-sort-level-generator
 
-Move, preserving history where practical:
+The two projects communicate through the versioned Level Pack contract:
 
-```text
-src/game/solver.ts
-src/game/solver.test.ts
-src/game/canonical.ts
-src/game/canonical.test.ts
-src/game/rng.ts
-scripts/analyze-generator.mjs
-scripts/generate-catalog.mjs
-scripts/validate-catalog.mjs
-data/levels/v3-*-prototype.json
-docs/generator-baseline.md
-docs/generator-v2-prototype.md
-docs/level-generation-design.md
-docs/offline-catalog-v3.md
-```
+- `formatVersion: 1`
+- `rulesVersion: "classic-v1"`
 
-The existing reverse generator in `src/game/generator.ts` is legacy v1/v2 technology. Copy it into the generator repository under a clearly named legacy area if historical reproducibility or comparison remains useful; it should not stay in the final game runtime.
+## Final ownership
 
-The generator also needs a pure rules module equivalent to `classic-v1`. It should be owned by the generator project rather than importing React/game-client code.
+### water-sort
 
-## Files that stay in the game repository
+Owns runtime/game concerns only:
 
 ```text
 src/game/rules.ts
 src/game/rules.test.ts
 src/game/useGame.ts
 src/game/persistence.ts
+src/game/persistence.test.ts
 src/game/types.ts
 src/levels/catalog.ts
 src/levels/catalog.test.ts
@@ -48,105 +36,70 @@ docs/architecture.md
 docs/level-format-v1.md
 ```
 
-## Generator repository shape
+It does not contain a solver, generator, canonical cross-puzzle key, generator RNG, audit catalog scripts, or generator prototype data.
+
+### water-sort-level-generator
+
+Owns authoring/offline concerns:
 
 ```text
-water-sort-level-generator/
-├── src/
-│   ├── rules/
-│   ├── generator/
-│   ├── solver/
-│   ├── canonical/
-│   ├── evaluator/
-│   ├── validator/
-│   └── exporter/
-├── cli/
-├── spec/
-│   └── level-pack-v1.schema.json
-├── data/
-│   ├── audit/
-│   └── output/
-├── docs/
-└── tests/
+src/rules.ts
+src/canonical.ts
+src/rng.ts
+src/solver.ts
+src/profiles.ts
+src/generator.ts
+src/validator.ts
+src/exporter.ts
+src/cli/
+tests/
+spec/level-pack-v1.schema.json
+data/audit/
+data/output/
+data/levels/          historical v3 prototype catalogs
+docs/
+docs/history/         migrated generator design and benchmark documents
 ```
 
-Recommended CLI surface:
-
-```bash
-npm run generate -- --profile=expanded --count=1000
-npm run validate -- --file=data/audit/catalog.json
-npm run export:runtime -- --input=data/audit/catalog.json --output=data/output/levels-v1.json
-```
-
-## Game repository shape
-
-```text
-water-sort/
-├── src/
-│   ├── game/
-│   ├── levels/
-│   ├── components/
-│   ├── hooks/
-│   └── i18n/
-├── spec/
-├── docs/
-└── public/
-```
+The generator has its own `classic-v1` rules implementation. Compatibility with consumers is controlled by `rulesVersion` and contract tests rather than importing Web code.
 
 ## Release workflow
 
-1. Generator creates candidates.
+1. Generator creates balanced candidate boards.
 2. Solver proves accepted levels.
-3. Validator checks solutions, invariants, and canonical uniqueness.
-4. Human difficulty sampling is performed when scoring rules change.
-5. Exporter writes a compact Level Pack v1.
-6. The pack is copied or published to game consumers.
-7. Each consumer validates `formatVersion` and `rulesVersion`.
-8. Web/iOS/Android releases play only those verified levels.
+3. Validator checks solution replay, invariants, and canonical uniqueness.
+4. Difficulty metrics classify/select accepted levels.
+5. Human playtesting is performed when difficulty rules change materially.
+6. Exporter writes a compact Level Pack v1.
+7. Consumers validate `formatVersion` and `rulesVersion`.
+8. Web/iOS/Android ship only already-generated, solver-verified levels.
 
-The pack is a build artifact/content artifact. The game does not invoke generator code.
+Official clients do not run the authoring solver on player devices.
 
-## Merge gate for this migration
+## Completed migration work
 
-Before the split branch replaces production:
+- [x] Created `water-sort-level-generator`.
+- [x] Moved the generator to a standalone Node/TypeScript project.
+- [x] Added Generator unit tests and TypeScript build checks.
+- [x] Added end-to-end Generator CI: generate → validate → export.
+- [x] Migrated historical generator design/benchmark documents.
+- [x] Migrated the two existing v3 prototype catalogs.
+- [x] Changed Web Level/Random games to static Level Pack consumption.
+- [x] Added Level Pack v1 parser, validation, schema, and documentation.
+- [x] Preserved v1/v2 saved-game compatibility.
+- [x] Keyed new static-level records by stable level ID.
+- [x] Removed generator/solver/audit tooling from the Web repository.
 
-- create `water-sort-level-generator`;
-- move the authoring code and tests;
-- generate a production-sized pack, not only the current 40-per-difficulty prototype;
-- run generator validation;
-- run `water-sort` unit tests and production build;
-- verify Level, Random, Undo, Restart, reload restoration, and completion flows;
-- remove the obsolete generator/solver code and generator scripts from the game repository.
+## Remaining product work
 
+The current Web migration pack contains 40 levels per difficulty. It is sufficient for validating the architecture, but it is not the final content strategy.
 
-## Bootstrap branch prepared
+Future catalog work belongs in `water-sort-level-generator`:
 
-A standalone project tree is prepared on the temporary branch:
+- add dead-end and mistake-recovery difficulty metrics;
+- calibrate difficulty using human playtests;
+- generate a larger production catalog;
+- decide pack sizing/versioning for Web and mobile;
+- optionally publish Level Packs through GitHub Releases/CDN rather than copying them into each client repository.
 
-```text
-generator/bootstrap
-```
-
-That branch contains only the generator project tree: Node/TypeScript CLI, solver, generator, validator, exporter, tests, CI, documentation, and the Level Pack v1 schema. It does not contain the React/Vite game client.
-
-Because the connected GitHub integration cannot create repositories, create an empty repository named `water-sort-level-generator` first. Then migrate the prepared tree locally.
-
-Recommended clean-history migration:
-
-```bash
-git clone https://github.com/laicwben2/water-sort.git
-cd water-sort
-git switch generator/bootstrap
-
-# Create a clean root commit containing only the prepared generator tree.
-git switch --orphan generator-main
-git add -A
-git commit -m "Initial standalone Water Sort level generator"
-
-git remote add generator https://github.com/laicwben2/water-sort-level-generator.git
-git push -u generator generator-main:main
-```
-
-The orphan commit is intentional: `generator/bootstrap` was prepared inside the original repository and therefore has a historical parent from `water-sort`. Creating a new root commit prevents the new generator repository from inheriting unrelated Web-game history.
-
-After the new repository exists and its CI passes, the corresponding authoring-only files can be deleted from the Web repository and the Draft split PR can be finalized.
+These tasks do not require changing the repository boundary again.
